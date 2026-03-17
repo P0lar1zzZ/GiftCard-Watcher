@@ -19,5 +19,10 @@ RUN playwright install chromium
 # 6. 复制源码：把当前文件夹下剩下的所有代码（monitor.py 等）全部拷贝进去
 COPY . .
 
-# 7. 启动指令：当容器启动时，执行 monitor.py 这个文件
-CMD ["python", "monitor.py"]
+# 🌟 核心：强制 Python 实时刷新日志输出
+ENV PYTHONUNBUFFERED=1
+
+# 启动指令
+CMD ["python", "-u", "monitor.py"]
+
+
