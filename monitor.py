@@ -51,13 +51,13 @@ async def check_amazon():
             # 增加超时到 60 秒，并等待网络静默
             await page.goto(url, wait_until="networkidle", timeout=60000)
             
-            # --- 蒋总裁亲自扒出来的“狙击逻辑” ---
+            # --- 亲自扒出来的“狙击逻辑” ---
             
             # 1. 检查限时秒杀标签 (Limited time deal)
             limited_deal = await page.query_selector(".a-badge-text:has-text('Limited time deal')")
             
             # 2. 检查额外优惠券 (Extra % off / Coupon)
-            # 使用蒋总裁定位的绿色高亮类名
+            # 使用老大定位的绿色高亮类名
             coupon = await page.query_selector(".s-coupon-highlight-color")
             
             # 3. 检查划线价 (List Price)
