@@ -1,0 +1,4 @@
+# 这个文件像一份“菜单”，告诉 Docker 我们的 Python 脚本需要装哪些插件
+playwright          # 负责模拟浏览器抓网页的库
+python-telegram-bot # 负责给你的 Telegram 发消息的库
+python-dotenv       # 负责读取 .env 文件里配置信息的库

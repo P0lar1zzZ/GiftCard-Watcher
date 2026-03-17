@@ -1,0 +1,8 @@
+
+version: '3.8'
+services:
+  sniper:
+    build: .
+    container_name: GoogleGiftcard_sniper
+    restart: always # 意思是：如果电脑重启了，这个容器也会自动跟着启动
+    env_file: .env   # 告诉 Docker 去读刚才生成的那个 .env 文件里的变量
